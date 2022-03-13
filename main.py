@@ -11,6 +11,4 @@ cli.add_command(add.add)
 
 
 if __name__ == '__main__':
-    cfg = config.load_config()
-    print(cfg.yaml())
     cli()
