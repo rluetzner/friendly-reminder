@@ -8,6 +8,8 @@ from datetime import date
 @click.option('--name', help='The name of the person you want to stay in touch with', required=True)
 def add(name):
     d = data.load()
+    if any(filter(lambda f: f.name == name, d.friends)):
+        raise click.UsageError(f'{name} is already in the reminder list.')
     c = config.load_config()
     today = date.today()
     day = today.strftime('%Y-%m-%d')
