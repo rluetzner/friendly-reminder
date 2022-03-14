@@ -1,6 +1,5 @@
 import click
-import data
-import config
+from app import data
 from datetime import datetime
 
 
@@ -14,7 +13,6 @@ def update(name, new_name, days, last_contact):
     friend = next(filter(lambda f: f.name == name, d.friends), None)
     if not friend:
         raise click.UsageError(f'{name} is not in the reminder list.')
-    c = config.load_config()
     if new_name:
         friend.name = new_name
     if days:

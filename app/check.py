@@ -1,6 +1,5 @@
 import click
-import data
-import config
+from app import data
 from datetime import date,datetime
 
 

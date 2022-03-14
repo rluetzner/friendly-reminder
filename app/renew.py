@@ -1,6 +1,5 @@
 import click
-import data
-import config
+from app import data
 from datetime import date
 
 
@@ -11,7 +10,6 @@ def renew(name):
     friend = next(filter(lambda f: f.name == name, d.friends), None)
     if not friend:
         raise click.UsageError(f'{name} is not in the reminder list.')
-    c = config.load_config()
     today = date.today()
     day = today.strftime('%Y-%m-%d')
     friend.last_contact = day

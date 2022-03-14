@@ -1,9 +1,8 @@
 import click
-import config
-from commands import add
-from commands import check
-from commands import renew
-from commands import update
+from app import add
+from app import check
+from app import renew
+from app import update
 
 @click.group(help='CLI tool to help you stay in touch with your friends')
 def cli():
