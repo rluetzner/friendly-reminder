@@ -15,4 +15,4 @@ def add(name):
     day = today.strftime('%Y-%m-%d')
     d.friends.append(data.friend(name, c.default_days, day))
     d.save()
-    print(f'You added {name} succesfully.')
+    print(f'Added {name} succesfully.')
