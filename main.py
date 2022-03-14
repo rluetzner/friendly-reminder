@@ -1,6 +1,7 @@
 import click
 import config
 from commands import add
+from commands import check
 from commands import renew
 from commands import update
 
@@ -10,6 +11,7 @@ def cli():
 
 
 cli.add_command(add.add)
+cli.add_command(check.check)
 cli.add_command(renew.renew)
 cli.add_command(update.update)
 
