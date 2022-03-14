@@ -17,7 +17,10 @@ class data:
 
     def save(self):
         home = Path.home()
-        file_path = f'{home}/.config/friendly-reminder/data.json'
+        parent_dir = f'{home}/.config/friendly-reminder'
+        if not os.path.exists(parent_dir):
+            os.mkdir(parent_dir)
+        file_path = f'{parent_dir}/data.json'
         with open(file_path, 'w') as f:
             f.write(jsonpickle.encode(self, indent=4, unpicklable=False))
 

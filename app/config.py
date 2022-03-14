@@ -30,10 +30,13 @@ def load_config():
             f.write(cfg.yaml())
 
     home = Path.home()
-    file_path = f'{home}/.config/friendly-reminder/friendly-reminder.yml'
+    parent_dir = f'{home}/.config/friendly-reminder'
+    file_path = f'{parent_dir}/friendly-reminder.yml'
     if os.path.isfile(file_path):
         return read_yaml(file_path)
     else:
         cfg = config()
+        if not os.path.exists(parent_dir):
+            os.mkdir(parent_dir)
         write_yaml(file_path, cfg)
         return cfg
