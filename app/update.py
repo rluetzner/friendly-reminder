@@ -13,6 +13,8 @@ def update(name, new_name, days, last_contact):
     friend = next(filter(lambda f: f.name == name, d.friends), None)
     if not friend:
         raise click.UsageError(f'{name} is not in the reminder list.')
+    if any(filter(lambda f: f.name == new_name, d.friends)):
+        raise click.UsageError(f'{new_name} is already in the reminder list.')
     if new_name:
         friend.name = new_name
     if days:
