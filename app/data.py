@@ -19,7 +19,7 @@ class data:
         home = Path.home()
         file_path = f'{home}/.config/friendly-reminder/data.json'
         with open(file_path, 'w') as f:
-            f.write(jsonpickle.encode(self, indent=4))
+            f.write(jsonpickle.encode(self, indent=4, unpicklable=False))
 
 
 def load():
@@ -28,6 +28,10 @@ def load():
     file_path = f'{home}/.config/friendly-reminder/data.json'
     if os.path.isfile(file_path):
         with open(file_path, 'r') as f:
-            return jsonpickle.decode(f.read())
+            dec = jsonpickle.decode(f.read())
+            d = data()
+            for f in dec['friends']:
+                d.friends.append(friend(f['name'], f['reminder_days'], f['last_contact']))
+            return d
     else:
         return data()
