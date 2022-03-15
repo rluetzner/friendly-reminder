@@ -3,7 +3,7 @@ from app import data
 from datetime import datetime
 
 
-@click.command()
+@click.command(short_help='Change settings for a contact')
 @click.option('--name', help='The name of the person you want to update', required=True)
 @click.option('--new-name', help='A new name for the friend')
 @click.option('--days', help='How many days between reminders', type=int)

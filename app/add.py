@@ -4,7 +4,7 @@ from app import config
 from datetime import date
 
 
-@click.command()
+@click.command(short_help='Add a new contact')
 @click.option('--name', help='The name of the person you want to stay in touch with', required=True)
 @click.option('--days', help='How many days between reminders', type=int)
 def add(name, days):

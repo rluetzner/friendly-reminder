@@ -3,7 +3,7 @@ from app import data
 from datetime import date
 
 
-@click.command()
+@click.command(short_help='Restart the reminder period for a contact')
 @click.option('--name', help='The name of the person you contacted', required=True)
 def renew(name):
     d = data.load()

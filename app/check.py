@@ -3,7 +3,7 @@ from app import data
 from datetime import date,datetime
 
 
-@click.command()
+@click.command(short_help='Check reminders for today')
 @click.option('--all', help='Include friends you contacted recently', is_flag=True)
 def check(all):
     today = date.today()
