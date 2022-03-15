@@ -5,6 +5,7 @@ from app import renew
 from app import update
 
 @click.group(help='CLI tool to help you stay in touch with your friends')
+@click.version_option(package_name='friendly-reminder')
 def cli():
     pass
 
