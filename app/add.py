@@ -6,7 +6,7 @@ from datetime import date
 
 @click.command()
 @click.option('--name', help='The name of the person you want to stay in touch with', required=True)
-@click.option('--days', help='How many days between reminders')
+@click.option('--days', help='How many days between reminders', type=int)
 def add(name, days):
     d = data.load()
     if any(filter(lambda f: f.name == name, d.friends)):
@@ -16,10 +16,6 @@ def add(name, days):
     day = today.strftime('%Y-%m-%d')
     if not days:
         days = c.default_days
-    try:
-        days = int(days)
-    except:
-        raise click.UsageError(f'{days} is not a valid number.')
     d.friends.append(data.friend(name, days, day))
     d.save()
     print(f'Added {name} succesfully.')

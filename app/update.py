@@ -6,7 +6,7 @@ from datetime import datetime
 @click.command()
 @click.option('--name', help='The name of the person you want to update', required=True)
 @click.option('--new-name', help='A new name for the friend')
-@click.option('--days', help='How many days between reminders')
+@click.option('--days', help='How many days between reminders', type=int)
 @click.option('--last-contact', help='Date of your last contact in the format yyyy-mm-dd')
 def update(name, new_name, days, last_contact):
     d = data.load()
@@ -18,10 +18,7 @@ def update(name, new_name, days, last_contact):
     if new_name:
         friend.name = new_name
     if days:
-        try:
-            friend.reminder_days = int(days)
-        except:
-            raise click.UsageError(f'{days} is not a valid number.')
+        friend.reminder_days = days
     if last_contact:
         try:
             date = datetime.strptime(last_contact, '%Y-%m-%d')
