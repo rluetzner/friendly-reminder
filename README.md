@@ -1,5 +1,10 @@
 # Friendly Reminder
 
+[![issues](https://img.shields.io/github/issues/rluetzner/friendly-reminder)](https://github.com/rluetzner/friendly-reminder/issues)
+[![forks](https://img.shields.io/github/forks/rluetzner/friendly-reminder)](https://github.com/rluetzner/friendly-reminder/network/members)
+[![stars](https://img.shields.io/github/stars/rluetzner/friendly-reminder)](https://github.com/rluetzner/friendly-reminder/stargazers)
+[![license](https://img.shields.io/github/license/rluetzner/friendly-reminder)](COPYING)
+
 This CLI app wants to help you stay in touch with your friends.
 
 ## Setup
