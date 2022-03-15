@@ -1,6 +1,6 @@
 import yaml
 import os
-from pathlib import Path
+from app import constants
 
 
 class config:
@@ -29,14 +29,11 @@ def load_config():
         with open(file, 'w') as f:
             f.write(cfg.yaml())
 
-    home = Path.home()
-    parent_dir = f'{home}/.config/friendly-reminder'
-    file_path = f'{parent_dir}/friendly-reminder.yml'
-    if os.path.isfile(file_path):
-        return read_yaml(file_path)
+    if os.path.isfile(constants.CONFIG_FILE_PATH):
+        return read_yaml(constants.CONFIG_FILE_PATH)
     else:
         cfg = config()
-        if not os.path.exists(parent_dir):
-            os.mkdir(parent_dir)
-        write_yaml(file_path, cfg)
+        if not os.path.exists(constants.CONFIG_DIR):
+            os.mkdir(constants.CONFIG_DIR)
+        write_yaml(constants.CONFIG_FILE_PATH, cfg)
         return cfg

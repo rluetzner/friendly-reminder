@@ -1,6 +1,6 @@
 import os
 import jsonpickle
-from pathlib import Path
+from app import constants
 
 
 class friend:
@@ -16,21 +16,16 @@ class data:
         self.friends = []
 
     def save(self):
-        home = Path.home()
-        parent_dir = f'{home}/.config/friendly-reminder'
-        if not os.path.exists(parent_dir):
-            os.mkdir(parent_dir)
-        file_path = f'{parent_dir}/data.json'
-        with open(file_path, 'w') as f:
+        if not os.path.exists(constants.CONFIG_DIR):
+            os.mkdir(constants.CONFIG_DIR)
+        with open(constants.DATA_FILE_PATH, 'w') as f:
             f.write(jsonpickle.encode(self, indent=4, unpicklable=False))
 
 
 def load():
 
-    home = Path.home()
-    file_path = f'{home}/.config/friendly-reminder/data.json'
-    if os.path.isfile(file_path):
-        with open(file_path, 'r') as f:
+    if os.path.isfile(constants.DATA_FILE_PATH):
+        with open(constants.DATA_FILE_PATH, 'r') as f:
             dec = jsonpickle.decode(f.read())
             d = data()
             for f in dec['friends']:
