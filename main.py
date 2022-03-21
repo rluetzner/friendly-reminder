@@ -1,6 +1,7 @@
 import click
 from app import add
 from app import check
+from app import remove
 from app import renew
 from app import update
 
@@ -12,6 +13,7 @@ def cli():
 
 cli.add_command(add.add)
 cli.add_command(check.check)
+cli.add_command(remove.remove)
 cli.add_command(renew.renew)
 cli.add_command(update.update)
 
