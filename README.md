@@ -7,7 +7,13 @@
 
 This CLI app wants to help you stay in touch with your friends.
 
-## Setup
+## Install
+
+```bash
+python setup.py install
+```
+
+## Developer setup
 
 ```bash
 # (optional) Create a new virtual environment for python
