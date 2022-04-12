@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name = 'friendly-reminder',
-    version = '0.0.1',
+    version = '1.0.0',
     author = 'Robert Lützner',
     author_email = 'robert.luetzner@pm.me',
     license = 'GPL-3.0',
