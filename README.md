@@ -7,6 +7,12 @@
 
 This CLI app wants to help you stay in touch with your friends.
 
+## Installation
+
+```bash
+pip install friendly-reminder
+```
+
 ## Usage
 
 Here's a quick overview on how this tool is meant to be used.
@@ -56,12 +62,6 @@ crontab -e
 # 0 9 * * * friendly-reminder check | termux-notification --title Friendly-Reminder
 ```
 
-## Install
-
-```bash
-python setup.py install
-```
-
 ## Developer setup
 
 ```bash
@@ -77,4 +77,29 @@ mkdir $HOME/.config/friendly-reminder
 
 # Run
 python3 main.py
+```
+
+## Install from source
+
+```bash
+python setup.py install
+```
+
+## Package
+
+```bash
+pip install twine
+pip install wheel
+
+# Build the packages
+python setup.py sdist bdist_wheel
+
+# Validate the packages
+twine check dist/*
+
+# Upload the packages to test.pypi.org
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+# Upload the package to pypi.org
+twine upload dist/*
 ```
