@@ -19,9 +19,9 @@ setup(
     py_modules = ['main', 'app'],
     packages = find_packages(),
     install_requires = [requirements],
-    python_requires='>=3.10',
+    python_requires='>=3.6',
     classifiers=[
-        "Programming Language :: Python :: 3.10.2",
+        "Programming Language :: Python :: 3.6",
         "Operating System :: OS Independent",
     ],
     entry_points = '''
