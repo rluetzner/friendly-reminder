@@ -3,7 +3,6 @@
 [![issues](https://img.shields.io/github/issues/rluetzner/friendly-reminder)](https://github.com/rluetzner/friendly-reminder/issues)
 [![forks](https://img.shields.io/github/forks/rluetzner/friendly-reminder)](https://github.com/rluetzner/friendly-reminder/network/members)
 [![stars](https://img.shields.io/github/stars/rluetzner/friendly-reminder)](https://github.com/rluetzner/friendly-reminder/stargazers)
-[![pypi](https://img.shields.io/pypi/dm/friendly-reminder)](https://pypi.org/project/friendly-reminder/)
 [![license](https://img.shields.io/github/license/rluetzner/friendly-reminder)](COPYING)
 
 This CLI app wants to help you stay in touch with your friends.
@@ -11,7 +10,7 @@ This CLI app wants to help you stay in touch with your friends.
 ## Installation
 
 ```bash
-pip install friendly-reminder
+# TODO
 ```
 
 ## Usage
@@ -66,41 +65,11 @@ crontab -e
 ## Developer setup
 
 ```bash
-# (optional) Create a new virtual environment for python
-python3 -m venv env
-source env/bin/activate
-
-# Install dependencies
-pip3 install -r requirements.txt
-
-# Initialise the config directory
-mkdir $HOME/.config/friendly-reminder
-
-# Run
-python3 main.py
+# Do we have to tell people to install Go???
 ```
 
 ## Install from source
 
 ```bash
-python setup.py install
-```
-
-## Package
-
-```bash
-pip install twine
-pip install wheel
-
-# Build the packages
-python setup.py sdist bdist_wheel
-
-# Validate the packages
-twine check dist/*
-
-# Upload the packages to test.pypi.org
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
-# Upload the package to pypi.org
-twine upload dist/*
+# go install
 ```
